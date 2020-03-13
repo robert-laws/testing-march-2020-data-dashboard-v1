@@ -1,12 +1,14 @@
 import React from 'react';
 
+import { DataDashboard } from './components/DataDashboard';
+
 import './App.scss';
 
 function App() {
   return (
-    <div className="App">
-      Data Dashboard
-    </div>
+    <main className="App">
+      <DataDashboard />
+    </main>
   );
 }
 
