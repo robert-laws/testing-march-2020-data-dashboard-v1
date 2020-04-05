@@ -1,8 +1,9 @@
-import React from 'react';
+import React, { useState } from 'react';
 import clsx from 'clsx';
 import { makeStyles } from '@material-ui/core/styles';
 import { CssBaseline, Typography, Container, Paper, Grid, Box, Card, CardContent } from '@material-ui/core';
 import { Title } from './ui/Title';
+import { instructionData } from '../data/instruction';
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -46,6 +47,8 @@ const useStyles = makeStyles(theme => ({
 }));
 
 export const DataDashboard = () => {
+  const [researchClasses, setResearchClasses] = useState(instructionData);
+
   const classes = useStyles();
   const fixedHeightPaper = clsx(classes.paper, classes.fixedHeight);
 
@@ -68,7 +71,7 @@ export const DataDashboard = () => {
                   <Card className={`${classes.root} ${classes.card}`}>
                     <CardContent>
                       <Typography component="p" variant="h4">
-                        69
+                        {researchClasses[0].data}
                       </Typography>
                       <Typography color="textSecondary">
                         Research Skills Classes
